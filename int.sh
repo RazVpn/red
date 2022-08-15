@@ -14,7 +14,7 @@ vmess_req() {
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "wss://who.int${path}",
+      "path": "${path}",
       "type": "none",
       "host": "${domain}",
       "sni": "who.int,
@@ -35,7 +35,7 @@ vless_req() {
     read -p "path   : " path
 
     echo ""
-    echo "Config : vless://${uuid}@who.int:443?path=wss://eho.int${path}&security=tls&encryption=none&type=ws&host=${domain}&sni=who.int#${user}"
+    echo "Config : vless://${uuid}@who.int:443?path=wss://who.int${path}&security=tls&encryption=none&type=ws&host=${domain}&sni=who.int#${user}"
 }
 
 
@@ -43,7 +43,6 @@ vless_req() {
 protocol_req() {
     echo -e "[1] Vmess"
     echo -e "[2] Vless"
-    echo -e " Maxis Trick By RazVpn"
     echo -ne "Protocol ? : "
     read proto
     case "$proto" in
