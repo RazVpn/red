@@ -1,6 +1,6 @@
 #!/bin/bash
 vmess_req() {
-	user=$(tr </dev/urandom -dc a-zA-20-9 | head -c8)
+	user=$(tr </dev/urandom -dc a-zA-Z0-9 | head -c8)
 	read -p "Domain : " domain
 	read -p "Uuid   : " uuid
 	read -p "Path   : " path
